@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!--jQuery library--> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Panels in Bootstrap</title>
+        <style>
+            .sp_l
+            { margin-top:200px;
+            }
+            .np_l
+            { margin-top:100px;
+              padding-bottom:0;
+              background-color:lightpink;
+              font-family:Roboto;
+              font-style:italic;
+            }
+            .color_j
+            { color:black;
+            }
+            h1
+            { animation-duration:800ms;
+            animation-name:blink;
+            animation-direction: alternate;
+            animation-iteration-count:infinite;
+            }
+            @keyframes blink
+            {
+                from
+                { opacity:1;
+                }
+                to
+                { opacity:0;
+                }
+            }
+            .mar_s
+            { margin-left:300px;
+            }
+            .bi_g
+            { background-color:lightgrey; 
+            }
+        
+        body
+            { background-color:lightpink; }
+        </style>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        
+    </head>
+    <body>
+      <div class="bi_g">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data target="#mynavbar">
+                        <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand">Question Paper</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        
+                        <li><a class="nav-item nav-link" href="{% url 'about-home' %}">About Us</a></li>
+                        <li><a class="nav-item nav-link" href="{% url 'contact-home' %}"><span class="glyphicon glyphicon-earphone"></span> &nbsp;Contact Us</a></li>
+                        <li><a class="nav-item nav-link" href="{% url 'check-home' %}"><span class="glyphicon glyphicon-send"></span>  &nbsp; Evaluation</a></li>
+                   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      </div>
+        
+        <div class="np_l">
+        <div class="container column_style">
+            <div class="jumbotron">
+              <div class="color_j">
+                <div class="text-center">
+                <b>     <h1> My Digital Quiz</h2> </b>
+              </div>
+            </div>
+              </div>
+        </div>
+            
+        </div>
+        <div class="text-center">
+            <img src="{% static 'evaluation/images/h_Img.jpg' %}"class="rounded float-left" alt="...">
+        </div>
+    </body>
+</html>
