@@ -22,6 +22,8 @@ def StreamView(object):
 def contact(request):
     return render(request,'evaluation/contactus.html',{'title':"Contact Us"})
 
+def question(request):
+    return render(request,'evaluation/question_Paper.html',{'title':"Question Paper"})
 
 def VideoFeed(request):
     return StreamingHttpResponse(StreamView(VideoStream()), content_type = 'multipart/x-mixed-replace; boundary=frame')    

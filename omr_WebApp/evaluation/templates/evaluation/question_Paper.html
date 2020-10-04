@@ -1,148 +1,216 @@
- <div class="container">
-            <h4>Answer the questions carefully and Predict your Future Stream  <span class="glyphicon glyphicon-thumbs-up"></span> &nbsp;<span class="glyphicon glyphicon-education"></span></h4>    
-        </div>
-        <br>
-        <br>
-        
-       <div class="container">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="thumbnail">
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!--jQuery library--> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OMR DETECTION</title>
+        <style>
+            .np_l
+            { margin-top:100px;
+              padding-bottom:0;
+              background-color:lightgrey;
+              color:black;
+            }
+            h4
+            { color:black;
+            }
+            h4
+            { font-size:23px;
+            }
+            
+            body
+            { background-color:lightgrey; }
+             </style>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+    </head>
+    <body>
+      <div class="bi_g">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data target="#mynavbar">
+                        <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+                    <a class="nav-item nav-link" href="{% url 'Web-Home' %}" class="navbar-brand">Home Page</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav navbar-right">
                         
-                           Complete the series:
-                           <b>0,3,8,15,24,35,48,___ </b>
-                        <br>
-                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="option" value="A">
-                                65
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                               67
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                63
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                64
-                            </label>
-                        </div>
-                    <br><br>
-                    Smallest Odd <b>Composite Number</b>(having more than two factors):
+                        <li><a class="nav-item nav-link" href="{% url 'about-home' %}">About Us</a></li>
+                        <li><a class="nav-item nav-link" href="{% url 'contact-home' %}"><span class="glyphicon glyphicon-earphone"></span> &nbsp;Contact Us</a></li>
+                        <li><a class="nav-item nav-link" href="{% url 'check-home' %}"><span class="glyphicon glyphicon-send"></span>  &nbsp; Evaluation</a></li>
+                   
+                   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      </div>
+            <div class="np_l">
+         <div class="container column_style">
+            <div class="jumbotron">
+              <div class="color_j">
+                <div class="text-center">
+                    <h1> Question Paper </h1>
+                </div>
+              </div>
+              </div>
+        </div>
+            </div>
+            <div class="container">
+                <h4>Answer the questions carefully and Predict your Future Stream  <span class="glyphicon glyphicon-thumbs-up"></span> &nbsp;<span class="glyphicon glyphicon-education"></span></h4>    
+            </div>
+            <br>
+            <br>
+            
+           <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="thumbnail">
+                            
+                               Complete the series:
+                               <b>0,3,8,15,24,35,48,___ </b>
+                            <br>
+                             <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="option" value="A">
+                                    65
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                   67
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    63
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    64
+                                </label>
+                            </div>
+                        <br><br>
+                        Smallest Odd <b>Composite Number</b>(having more than two factors):
+    
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="option" value="A">
+                                    1
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                  5
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                   15
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    9
+                                </label>
+                            </div>
+    <br> <br>
+    If <b>X+Y=12</b> and <b>X*Y=35</b> then X-Y=?
+    <br>
+      <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="option" value="A">
+                                   2
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                   3
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    4
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                   5
+                                </label>
+                            </div>
+    <br><br>
+    
+    What is the <b>sum of smallest</b> odd 2 digit number and greatest 3 digit number?
+    <br>
+      <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="option" value="A">
+                                    1000
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                  1010
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                 990
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                1009
+                                </label>
+                            </div>
+    <br> <br>
+    How many 3 digit numbers are completely <b>divisible by 6</b>?
+    <br>
+      <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="option" value="A">
+                                146
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                148
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                               150
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                               152
+                                </label>
+                            </div>
+    <br> <br>
 
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="option" value="A">
-                                1
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                              5
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                               15
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                9
-                            </label>
-                        </div>
-<br> <br>
-If <b>X+Y=12</b> and <b>X*Y=35</b> then X-Y=?
-<br>
-  <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="option" value="A">
-                               2
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                               3
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                4
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                               5
-                            </label>
-                        </div>
-<br><br>
-
-What is the <b>sum of smallest</b> odd 2 digit number and greatest 3 digit number?
-<br>
-  <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="option" value="A">
-                                1000
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                              1010
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                             990
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                            1009
-                            </label>
-                        </div>
-<br> <br>
-How many 3 digit numbers are completely <b>divisible by 6</b>?
-<br>
-  <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="option" value="A">
-                            146
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                            148
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                           150
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                           152
-                            </label>
-                        </div>
-<br> <br>
+    </body>
+</html>`
