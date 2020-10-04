@@ -138,26 +138,11 @@ class VideoStream():
                 cv2.drawContours(imgFinalContours,biggestContour,-1,(0,255,0),20)
                 cv2.drawContours(imgFinalContours,gradePoints,-1,(255,0,0),20)
 
-                '''biggestContour = biggestContour.reshape((4,2))
-                myPointsnew = np.zeros((4,1,2),np.int32)
-                add = biggestContour.sum(1)
-                myPointsnew[0] = biggestContour[np.argmin(add)]
-                myPointsnew[3] = biggestContour[np.argmax(add)]
-                diff = np.diff(biggestContour,axis=1)
-                myPointsnew[1] = biggestContour[np.argmin(diff)]
-                myPointsnew[2] = biggestContour[np.argmax(diff)]
-                [[x,y]]=myPointsnew[1]
-                print(biggestContour)
-                print(diff)
-                print(x,y)
-                imgTest = cv2.circle(imgTest, (x,y), radius=1, color=(0, 0, 255), thickness=10)
-                cv2.imshow("Test",imgTest)'''
 
                 biggestContour = reorderMyPoints(biggestContour)
                 pt1 = np.float32(biggestContour)
                 pt2 = np.float32([[0,0],[widthImg,0],[0,heightImg],[widthImg,heightImg]])
-                # print(pt1)
-                # print(pt2)
+ 
                 matrix = cv2.getPerspectiveTransform(pt1,pt2)
                 imgWarpColored = cv2.warpPerspective(img,matrix,(widthImg,heightImg))
 
@@ -167,15 +152,11 @@ class VideoStream():
                 pt2g = np.float32([[0,0],[325,0],[0,150],[325,150]])
                 matrixg = cv2.getPerspectiveTransform(pt1g,pt2g)
                 imgGradeDisplayColored = cv2.warpPerspective(img,matrixg,(325,150))
-                # cv2.imshow("Grade Points",imgGradeDisplayColored)
-                # Bubbles having markings have more amount of pixels and bubbles having no markings have less amount of pixels
 
-                #Applying Threshold
                 imgWarpGray = cv2.cvtColor(imgWarpColored,cv2.COLOR_BGR2GRAY)
                 imgThresh = cv2.threshold(imgWarpGray,170,255,cv2.THRESH_BINARY_INV)[1] # ->We can change 150,255 as per our need, 255 is max value.
                 boxes = splitBoxes(imgThresh)
-                # print("Marked Bubble: ",cv2.countNonZero(boxes[1]))
-                # print("Unmarked Bubble: ",cv2.countNonZero(boxes[2]))
+
 
                 countR=0
                 countC=0
@@ -190,9 +171,7 @@ class VideoStream():
                     myPixelVal[countR][countC]= totalPixels
                     countC += 1
                     if (countC==choices):countC=0;countR +=1
-                # print(myPixelVal)
 
-                # Finding index of non-zero values
 
                 myIndex = []
                 for i in range(question):
@@ -209,9 +188,7 @@ class VideoStream():
                     else:
                         gradings.append(0)
                 score = (sum(gradings)/question)*100
-                # print("Score: ",score)
 
-                # Marking Answers
                 img_1 =imgWarpColored.copy()
                 imgRawDrawing = np.zeros_like(imgWarpColored)
                 imgResult = showAnswers(img_1,myIndex,gradings,ans,question,choices)
@@ -245,11 +222,4 @@ class VideoStream():
             imgArray = ([imgBlank,imgBlank,imgBlank,imgBlank],[imgBlank,imgBlank,imgBlank,imgBlank],
                         [imgBlank,imgBlank,imgBlank,imgBlank],[imgBlank,imgBlank,imgBlank,imgBlank])
 
-    #             labels = [["Original","Gray","Blur","Canny"],["Contours","Final Contours","Wrapped","Threshold"],
-    #                       ["Result","Raw Drawing","Inverse Warp","Grade Display"],["Final","Blank","Blank","Blank"]]
-    #             imgStacked = stackImages(imgArray,0.2,labels)
-    #             # cv2.imshow("Original",imgStacked)
-    #             if cv2.waitKey(1)&0xFF == ord('s'):
-    #                 cv2.imwrite("FinalResult.jpg",imgFinal)
-    #                 cv2.waitKey(300)
         return jpeg.tobytes()
